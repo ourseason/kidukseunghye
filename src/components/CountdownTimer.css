@@ -1,0 +1,35 @@
+.countdown-timer {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 배치 */
+    align-items: center; /* 가로 중앙 정렬 */
+    padding: 20px; /* 여백 */
+}
+
+.countdown-title {
+    font-size: 18px; /* 문구 폰트 사이즈 */
+    color: #333; /* 문구 색상 */
+    margin-bottom: 20px; /* 아래 여백 추가 */
+    text-align: center; /* 중앙 정렬 */
+}
+
+.countdown-row {
+    display: flex; /* 가로로 정렬 */
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+.countdown-item {
+    text-align: center; /* 중앙 정렬 */
+    margin: 0 10px; /* 좌우 여백 추가 */
+}
+
+.countdown-item h1 {
+    font-size: 24px; /* 큰 폰트 사이즈 */
+    color: #333; /* 폰트 색상 */
+    margin: 0; /* 기본 여백 제거 */
+}
+
+.countdown-item span {
+    font-size: 12px; /* 작은 폰트 사이즈 */
+    color: #666; /* 보조 폰트 색상 */
+}

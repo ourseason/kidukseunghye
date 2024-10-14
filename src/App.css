@@ -1,5 +1,37 @@
+
+html, body{
+  overflow-x: hidden; /* 수평 스크롤 숨기기 */
+}
+
+@font-face {
+  font-family: 'SUIT-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#root {
+  padding-bottom: 3rem;
+}
+
 .App {
   text-align: center;
+  background-color: rgb(243, 239, 236);
+  border-radius: 20px;
+}
+
+/* PC 모드에서만 max-width를 400px로 제한 */
+@media (min-width: 1024px) {
+  .App {
+    max-width: 400px; /* 전체 너비를 400px로 제한 */
+    margin: 0 auto; /* 수평 중앙 정렬 */
+  }
+}
+
+@media(min-width: 768px) {
+  .App {
+      
+  }
 }
 
 .App-logo {
@@ -26,6 +58,32 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.black-nav {
+  background: black;
+  width: 100%;
+  display: flex;
+  color: white;
+  padding: 20px;
+}
+
+.red {
+  color: red;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.list {
+  text-align: left;
+  padding-left: 20px;
+  border-bottom: 1px solid grey;
+}
+
+.content {
+  padding: 40px; /* 패딩값 추가 */
 }
 
 @keyframes App-logo-spin {
