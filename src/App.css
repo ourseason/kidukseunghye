@@ -1,4 +1,9 @@
 
+/* 프로젝트 전체에 Pretendard 폰트 적용 */
+* {
+  font-family: 'Pretendard', sans-serif;
+}
+
 html, body{
   overflow-x: hidden; /* 수평 스크롤 숨기기 */
 }
@@ -16,21 +21,31 @@ html, body{
 
 .App {
   text-align: center;
-  background-color: rgb(243, 239, 236);
-  border-radius: 20px;
+  box-shadow: 0px 0px 18px rgb(0 0 0 / 10%);
+ /*  background-color: rgb(243, 239, 236); */
 }
 
 /* PC 모드에서만 max-width를 400px로 제한 */
 @media (min-width: 1024px) {
   .App {
-    max-width: 400px; /* 전체 너비를 400px로 제한 */
+    max-width: 480px; /* 전체 너비를 400px로 제한 */
     margin: 0 auto; /* 수평 중앙 정렬 */
+  }
+}
+
+/* PC 모드에서만 max-width를 400px로 제한 */
+@media (max-width: 1023px) {
+  .App {
+    max-width: 480px; /* 전체 너비를 400px로 제한 */
+    margin: 0 auto; /* 수평 중앙 정렬 */
+    overflow: hidden;
   }
 }
 
 @media(min-width: 768px) {
   .App {
-      
+    max-width: 480px;
+    overflow: hidden;
   }
 }
 
@@ -80,10 +95,6 @@ div {
   text-align: left;
   padding-left: 20px;
   border-bottom: 1px solid grey;
-}
-
-.content {
-  padding: 40px; /* 패딩값 추가 */
 }
 
 @keyframes App-logo-spin {

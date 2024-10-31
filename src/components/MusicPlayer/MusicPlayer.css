@@ -1,0 +1,19 @@
+.music-player-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.control-button {
+  background: none;
+  border: none;
+  font-size: 16px; /* 아이콘 크기 설정 */
+  cursor: pointer;
+  color: #462e2e; /* 아이콘 색상 */
+  margin-right: 10px;
+}
+
+.control-button:hover {
+  opacity: 0.8; /* 호버 시 살짝 투명해지도록 설정 */
+}

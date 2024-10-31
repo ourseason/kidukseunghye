@@ -1,0 +1,62 @@
+.map-container {
+    width: 100%;
+    height: 200px;
+    position: relative; /* 맵을 포함하는 컨테이너 설정 */
+}
+
+.location-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 8px; /* 아래쪽 여백 */
+}
+
+.location-subtitle-1 {
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;
+}
+
+.location-subtitle-2 {
+    line-height: 0.8rem;
+    font-size: 12px;
+    font-weight: normal;
+    color: #666;
+    margin-bottom: 40px; /* 아래쪽 여백 */
+}
+
+.directions {
+    margin-top: 20px; /* 지도와의 간격 조정 */
+}
+
+.directions-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px; /* 제목과 내용 간격 */
+}
+
+.transportation{
+    text-align: left;
+}
+
+
+.transportation h4 {
+    font-size: 18px;
+    margin-top: 10px; /* 각 항목 간의 간격 */
+    font-weight: bold;
+}
+
+
+.transport-title {
+    font-size: 14px;
+    margin-top: 24px; /* 각 항목 간의 간격 */
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+.transport-info {
+    font-size: 12px;
+    line-height: 1; /* 줄 간격 조정 */
+    margin-top: 5px; /* 항목 간 간격 추가 */
+    margin-left: 6px;
+}
+
