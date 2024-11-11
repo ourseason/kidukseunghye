@@ -102,21 +102,32 @@ const KakaoMap = () => {
                     오시는길
                 </p>
             </div>
-            
-            <p className="location-subtitle-1">MARRYVILIA THE PRESTIGE</p>
-            <p className="location-subtitle-2">경기도 수원시 팔달구 효원로 25  
+            <div style={{ paddingBottom: '0.7rem', textAlign: 'center' }}>
+                <p className="location-subtitle-1">MARRYVILIA THE PRESTIGE</p>
                 
-            <FaCopy
-                onClick={copyToClipboard}
-                style={{ cursor: 'pointer', marginLeft: '10px' }}
-                title="복사하기"
-            /> </p> 
-
+                <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: '5px', marginBottom:'10px' }}>
+                    <p className="location-subtitle-2" style={{ margin: 0 }}>경기도 수원시 팔달구 효원로 25</p>
+                    <img
+                        src="/copy.png"
+                        alt="복사하기"
+                        onClick={copyToClipboard}
+                        style={{
+                            cursor: 'pointer',
+                            marginLeft: '10px',
+                            width: '14px',
+                            height: '14px',
+                            verticalAlign: 'middle'
+                        }}
+                        title="복사하기"
+                    />
+                </div>
+            </div>
+        
             <div className="map-container" id="map"></div>
 
 
             <div style={{textAlign: 'left' }}>
-                <div data-aos="fade-up" data-aos-once="true" data-aos-anchor-placement="top-bottom" style={{ padding: '16px 0', borderBottom: '1px solid #ccc' }}>
+                <div style={{ padding: '16px 0', borderBottom: '1px solid #ccc' }}>
                     <div style={{ paddingTop: 0, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div style={{
                             backgroundColor: '#fff',

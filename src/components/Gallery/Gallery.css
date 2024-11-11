@@ -48,13 +48,14 @@
 }
 
 .gallery-grid div:nth-child(3) img {
-    top: 33%; /* 3번 이미지 세로 약간 아래 */
-    left: 30%;
+    top: 26%;
+    left: 38%;
 }
 
 .gallery-grid div:nth-child(4) img {
-    top: 44%;
+    top: 50%;
     left: 53%; /* 4번 이미지 가로 약간 왼쪽 */
+    transform: translate(-50%, -50%) scale(1.9); /* 중앙에 맞추고 크기를 확대해 세로 중앙 부분을 표시 */
 }
 
 .gallery-grid div:nth-child(5) img {
@@ -99,13 +100,13 @@
 }
 
 .gallery-grid div:nth-child(13) img {
-    top: 56%;
-    left: 32%;
+    top: 64%;
+    left: 79%;
 }
 
 .gallery-grid div:nth-child(14) img {
-    top: 64%;
-    left: 79%;
+    top: 56%;
+    left: 32%;
 }
 
 .gallery-grid div:nth-child(15) img {
@@ -116,10 +117,10 @@
 
 
 @media (max-width: 1023px) {
-    .swiper-slide[data-swiper-slide-index="12"] img {
+    .swiper-slide[data-swiper-slide-index="13"] img {
         margin-top: 50%;
     }
-    .swiper-slide[data-swiper-slide-index="6"] img {
+    .swiper-slide[data-swiper-slide-index="7"] img {
         margin-top: 50%;
     }
 }

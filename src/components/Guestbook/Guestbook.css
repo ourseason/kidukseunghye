@@ -2,7 +2,7 @@
 .guestbook-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 44px;
     font-family: 'Pretendard';
     background-color: rgb(252, 250, 248);
 }
@@ -108,7 +108,7 @@
 
 /* 모달 제목 */
 .modal-content h3 {
-    font-size: 14px;
+    font-size: 13px;
     margin-bottom: 20px;
     color: #333;
     border-bottom: 1px solid #e0e0e0;
@@ -263,4 +263,22 @@ button[type="submit"]:hover {
 
 .modal-close:hover {
     color: #333;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.show-more-button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* 정확하게 가운데 정렬 */
+}
+
+.write-button {
+    margin-left: auto; /* 오른쪽 정렬 */
+  
 }

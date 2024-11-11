@@ -4,8 +4,14 @@ import './GuestbookWriteModal.css'; // 새로 추가한 CSS 파일
 function GuestbookWriteModal({ isOpen, onClose, formData, handleInputChange, handleSubmit }) {
     if (!isOpen) return null;
 
+    const handleOverlayClick = (e) => {
+        if (e.target === e.currentTarget) {
+            onClose();
+        }
+    };
+
     return ReactDOM.createPortal(
-        <div className="guestbook-write-modal-overlay">
+        <div className="guestbook-write-modal-overlay" onClick={handleOverlayClick}>
             <div className="guestbook-write-modal-content">
                 <span className="guestbook-write-modal-close" onClick={onClose}>&times;</span>
                 <h3>축하의 메시지를 전해주세요.</h3>

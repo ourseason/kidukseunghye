@@ -20,7 +20,7 @@ function Guestbook() {
 
     const fetchEntries = async () => {
         try {
-            const response = await fetch('https://lenssiskr1.cafe24.com/weddingapi/guestbook');
+            const response = await fetch('https://sn0711.mycafe24.com/weddingapi/guestbook');
             const data = await response.json();
             if (data.success) {
                 setEntries(data.entries);
@@ -67,7 +67,7 @@ function Guestbook() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('https://lenssiskr1.cafe24.com/weddingapi/guestbook', {
+            const response = await fetch('https://sn0711.mycafe24.com/weddingapi/guestbook', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -94,7 +94,7 @@ function Guestbook() {
 
         if (deletePassword) {
             try {
-                const response = await fetch('https://lenssiskr1.cafe24.com/weddingapi/guestbook/delete', {
+                const response = await fetch('https://sn0711.mycafe24.com/weddingapi/guestbook/delete', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded',
@@ -128,65 +128,67 @@ function Guestbook() {
     };
 
     return (
-        <div className="guestbook-container" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
-            <span className="guestbook-container-title">
-                <span className='guestbook-container-title-english'> GUESTBOOK</span>
-                <span className='guestbook-container-title-korean'>방명록</span>
-            </span>
-            <div className="guestbook-entries">
-                {entries.slice(0, visibleEntries).map((entry, index) => (
-                    <div className="guestbook-card" key={index} onClick={() => openDetailModal(entry)}>
-                        <div className="guestbook-card-header">
-                            <span className="guestbook-list-name">{entry.name}</span>
-                            <span className="date-span"> {entry.created_at} 
-                            <button 
-                                className="delete-button" 
-                                onClick={(e) => { 
-                                    e.stopPropagation(); 
-                                    setSelectedEntry(entry); // 삭제할 엔트리 정보를 selectedEntry에 설정
-                                    setIsDeleteModalOpen(true); 
-                                }}
-                            >
-                                    x
-                                </button> 
-                            </span>
+            <div className="guestbook-container" >
+                <div data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
+                <span className="guestbook-container-title">
+                    <span style={{ fontSize: '10px', letterSpacing: '3px' }}>GUEST BOOK</span>
+                    
+                </span>
+                <div className="guestbook-entries">
+                    {entries.slice(0, visibleEntries).map((entry, index) => (
+                        <div className="guestbook-card" key={index} onClick={() => openDetailModal(entry)}>
+                            <div className="guestbook-card-header">
+                                <span className="guestbook-list-name">{entry.name}</span>
+                                <span className="date-span"> {entry.created_at} 
+                                <button 
+                                    className="delete-button" 
+                                    onClick={(e) => { 
+                                        e.stopPropagation(); 
+                                        setSelectedEntry(entry); // 삭제할 엔트리 정보를 selectedEntry에 설정
+                                        setIsDeleteModalOpen(true); 
+                                    }}
+                                >
+                                        x
+                                    </button> 
+                                </span>
+                            </div>
+                            <div className="guestbook-card-body">
+                                {entry.message}
+                            </div>
                         </div>
-                        <div className="guestbook-card-body">
-                            {entry.message}
-                        </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
+
+                <div className="button-container">
+                    {visibleEntries < entries.length && (
+                        <button onClick={handleShowMore} className="show-more-button">
+                            더보기
+                        </button>
+                    )}
+                    <button onClick={openWriteModal} className="write-button" contenteditable="false" tabindex="-1">글쓰기</button>
+                </div>
+
+                <GuestbookModal isOpen={isDetailModalOpen} onClose={closeDetailModal}>
+                    <span className="guestbook-modal-title">{selectedEntry?.name}</span>
+                    <span className="guestbook-modal-text"><p>{selectedEntry?.message}</p></span>
+                </GuestbookModal>
+
+                <GuestbookWriteModal
+                    isOpen={isWriteModalOpen}
+                    onClose={closeWriteModal}
+                    formData={formData}
+                    handleInputChange={handleInputChange}
+                    handleSubmit={handleSubmit}
+                />
+
+                <GuestbookDeleteModal
+                    isOpen={isDeleteModalOpen}
+                    onClose={() => setIsDeleteModalOpen(false)}
+                    deletePassword={deletePassword}
+                    setDeletePassword={setDeletePassword}
+                    handleDeleteSubmit={handleDeleteSubmit}
+                />
             </div>
-
-            <div className="button-container">
-                {visibleEntries < entries.length && (
-                    <button onClick={handleShowMore} className="show-more-button">
-                        더보기
-                    </button>
-                )}
-                <button onClick={openWriteModal} className="write-button">글쓰기</button>
-            </div>
-
-            <GuestbookModal isOpen={isDetailModalOpen} onClose={closeDetailModal}>
-                <span className="guestbook-modal-title">{selectedEntry?.name}</span>
-                <span className="guestbook-modal-text"><p>{selectedEntry?.message}</p></span>
-            </GuestbookModal>
-
-            <GuestbookWriteModal
-                isOpen={isWriteModalOpen}
-                onClose={closeWriteModal}
-                formData={formData}
-                handleInputChange={handleInputChange}
-                handleSubmit={handleSubmit}
-            />
-
-            <GuestbookDeleteModal
-                isOpen={isDeleteModalOpen}
-                onClose={() => setIsDeleteModalOpen(false)}
-                deletePassword={deletePassword}
-                setDeletePassword={setDeletePassword}
-                handleDeleteSubmit={handleDeleteSubmit}
-            />
         </div>
     );
 }

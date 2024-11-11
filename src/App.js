@@ -8,7 +8,12 @@ import Gallery from './components/Gallery/Gallery';
 import MobileInvitation from './components/MobileInvitation/MobileInvitation';
 import Guestbook from './components/Guestbook/Guestbook';
 import MusicPlayer from './components/MusicPlayer/MusicPlayer';
+import BottomImage from './components/BottomImage/BottomImage';
 import AttendanceStatus from './components/AttendanceStatus/AttendanceStatus';
+
+
+ 
+
 
 function App() {
   return (
@@ -23,6 +28,7 @@ function App() {
         <KakaoMap /> {/* 카카오 지도 추가 */}
         <MobileInvitation /> {/* 마을전하실곳 */}
         <Guestbook />
+        <BottomImage />
       </div>
     </div>
   );

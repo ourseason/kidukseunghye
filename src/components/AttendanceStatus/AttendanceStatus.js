@@ -19,14 +19,40 @@ const AttendanceStatus = () => {
     setIsSecondModalOpen(false);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!side || !attendance || !name || !consent) {
-      alert("모든 필수 정보를 입력해주세요.");
-      return;
+        alert("모든 필수 정보를 입력해주세요.");
+        return;
     }
-    alert("참석여부가 제출되었습니다.");
-    closeModal();
-  };
+
+    // form 데이터 전송 방식으로 전환
+    try {
+        const formData = new URLSearchParams();
+        formData.append('side', side);
+        formData.append('attendance', attendance);
+        formData.append('name', name);
+        formData.append('consent', consent ? 1 : 0); // true를 1로, false를 0으로 변환
+
+        const response = await fetch('https://sn0711.mycafe24.com/weddingapi/attendance', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formData.toString(),
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            alert("참석여부가 제출되었습니다.");
+            closeModal();
+        } else {
+            alert("제출에 실패했습니다. 다시 시도해주세요.");
+        }
+    } catch (error) {
+        console.error("Error submitting attendance:", error);
+        alert("서버 오류가 발생했습니다.");
+    }
+};
 
   return (
     <div>
