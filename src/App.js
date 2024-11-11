@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import CoverImage from './components/CoverImage/CoverImage';
 import InvitationText from './components/InvitationText/InvitationText';

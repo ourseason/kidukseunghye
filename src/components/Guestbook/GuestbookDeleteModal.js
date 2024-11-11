@@ -1,3 +1,4 @@
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './GuestbookModal.css';
 import './GuestbookDeleteModal.css'; // 새로 추가한 CSS 파일
